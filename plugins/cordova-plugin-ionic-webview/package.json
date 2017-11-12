@@ -1,0 +1,28 @@
+{
+  "name": "cordova-plugin-ionic-webview",
+  "version": "1.1.16",
+  "description": "The official Ionic's WKWebView Engine Plugin",
+  "main": "index.js",
+  "scripts": {
+    "sync_plugin_xml": "sync-cordova-xml package.json plugin.xml --output=plugin.xml",
+    "version": "npm run sync_plugin_xml && git add plugin.xml",
+    "deploy": "np --yolo"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ionic-team/cordova-plugin-ionic-webview"
+  },
+  "bugs": {
+    "url": "https://github.com/ionic-team/cordova-plugin-ionic-webview/issues"
+  },
+  "keywords": [
+    "cordova",
+    "wkwebview"
+  ],
+  "author": "Ionic Team",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "np": "^2.16.0",
+    "sync-cordova-xml": "^0.4.0"
+  }
+}

@@ -1,0 +1,46 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-buttons start>
+      <button menuToggle ion-button icon-only style="color:white">
+        <ion-icon name="ios-menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>AIR POLLUTION</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only style="color:white" (click)="reload()">
+        <ion-icon name="ios-refresh"></ion-icon>
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  
+  <div class="smog {{aqiStatus(aqi.data.aqi).code}}" style="background:url(assets/imgs/clouds.png) 25% 100% repeat-x">
+  </div>
+  <div class="pollution-back {{aqiStatus(aqi.data.aqi).code}}" style="">
+    <ion-icon name="ios-nuclear-outline" class="pollution-sign"></ion-icon>
+    <div class="pollution-time">TODAY</div>
+    <div class="pollution-value">{{aqi.data.aqi}}</div>
+
+    <div class="aqi-extra" padding style="left:0">
+      {{aqi.data.city?aqi.data.city.name:''}}
+    </div>
+    <div class="aqi-extra" padding style="right:0">
+      {{aqi.data.dominentpol?'Pollutant '+aqi.data.dominentpol:''}}
+    </div>
+  </div>
+  <div  class="aqi-status {{aqiStatus(aqi.data.aqi).code}}">
+    <div class="aqi-readable">{{aqiStatus(aqi.data.aqi).val}}</div>
+
+    <div class="chart-container">
+      <canvas #barCanvas class="aqi-graph" style="height:250px">
+    </canvas>
+    </div>
+
+
+
+  </div>
+</ion-content>
